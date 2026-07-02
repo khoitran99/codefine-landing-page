@@ -1,0 +1,23 @@
+export const company = {
+  brandName: 'CoDefine',
+  companyName: 'CODEFINE Joint Stock Company',
+  foreignCompanyName: 'CODEFINE JOINT STOCK COMPANY',
+  shortName: 'CODEFINE.,JSC',
+  businessStatus: 'Active',
+  enterpriseCode: '0111550721',
+  legalEntityType: 'Joint Stock Company',
+  establishmentDate: '2026-06-26',
+  establishmentDateLabel: 'June 26, 2026',
+  legalRepresentative: 'NGUYEN HOAI PHONG',
+  tagline: 'Define How We Code. Define How We Work Together.',
+  logoLockup: '/assets/brand/codefine-logo-lockup.png',
+  logoMark: '/assets/brand/codefine-mark.png',
+  registeredHeadOffice: {
+    streetNumber: 'No. 10',
+    street: 'Goc De Alley',
+    ward: 'Tuong Mai Ward',
+    city: 'Hanoi',
+    country: 'Vietnam',
+    fullAddress: 'No. 10 Goc De Alley, Tuong Mai Ward, Hanoi, Vietnam',
+  },
+} as const
