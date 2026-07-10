@@ -37,9 +37,6 @@ export function SiteHeader() {
             {company.tagline}
           </p>
           <div className="ml-auto flex items-center gap-5">
-            <a href="/#insights" className="hover:text-white">
-              {company.brandName} AI
-            </a>
             <a href="/#insights" className="hidden hover:text-white sm:inline">
               Blog Article
             </a>

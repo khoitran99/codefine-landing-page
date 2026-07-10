@@ -93,24 +93,24 @@ export const services = [
 
 export const homeStats = [
   {
-    value: company.businessStatus,
-    label: 'Business Status',
-    body: `${company.companyName} is legally registered and operating in Vietnam.`,
+    value: '100%',
+    label: 'AI-Integrated Workflows',
+    body: 'Every project runs on augmented, AI-accelerated workflows from build to release.',
   },
   {
-    value: company.enterpriseCode,
-    label: 'Enterprise Code',
-    body: `Registered as ${company.shortName} with Vietnamese enterprise code ${company.enterpriseCode}.`,
+    value: '120+',
+    label: 'Projects Delivered',
+    body: 'Web, mobile, and AI systems shipped for growing businesses.',
   },
   {
-    value: '2026',
-    label: 'Established',
-    body: `Established on ${company.establishmentDateLabel} as a ${company.legalEntityType}.`,
+    value: '3+',
+    label: 'Avg. Years Of Partnership',
+    body: 'Clients stay well past first delivery, scaling with the same senior team.',
   },
   {
-    value: 'Hanoi',
-    label: 'Head Office',
-    body: company.registeredHeadOffice.fullAddress,
+    value: '90%',
+    label: 'Senior Engineers',
+    body: 'Delivery pods staffed by senior engineers with production experience.',
   },
 ]
 

@@ -1,11 +1,4 @@
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  BotIcon,
-  BrainCircuitIcon,
-  DatabaseIcon,
-  QuoteIcon,
-} from 'lucide-react'
+import { ArrowLeftIcon, ArrowRightIcon, QuoteIcon } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -32,6 +25,16 @@ import {
   trustStats,
 } from '@/data/content'
 import { company } from '@/data/company'
+import { cn } from '@/lib/utils'
+
+const clientLogos = [
+  { name: 'HYPHEN', className: 'text-[16px] font-bold uppercase tracking-[0.28em]' },
+  { name: 'Appellon', className: 'text-[18px] font-medium tracking-tight' },
+  { name: 'ARTIUS GLOBAL', className: 'text-[15px] font-bold uppercase tracking-[0.12em]' },
+  { name: 'CloudKinetics', className: 'text-[18px] font-semibold tracking-tight' },
+  { name: 'DocMed', className: 'text-[20px] font-extrabold tracking-tight' },
+  { name: 'Flycatcher', className: 'text-[18px] font-light tracking-wide' },
+]
 
 export function HomePage() {
   return (
@@ -47,10 +50,11 @@ export function HomePage() {
             AI-Driven IT Outsourcing & Software Development
           </h1>
           <p className="mt-7 max-w-[872px] text-base leading-7 text-white/72">
-            From web and mobile applications to full digital transformation, we
-            partner with growing businesses to build software that scales,
-            powered by senior engineers and AI-accelerated workflows at every
-            stage of delivery.
+            From web and mobile applications to enterprise cloud platforms, AI
+            Agents, and intelligent workflow automation, CoDefine helps
+            businesses accelerate digital transformation with scalable
+            technology, senior engineering expertise, and AI-powered software
+            delivery.
           </p>
           <Button
             asChild
@@ -61,7 +65,6 @@ export function HomePage() {
               <ArrowRightIcon data-icon="inline-end" />
             </a>
           </Button>
-          <p className="mt-28 text-[18px] text-white/70">Company profile</p>
           <LogoStrip />
         </Container>
       </section>
@@ -86,59 +89,6 @@ export function HomePage() {
               <ServiceCard key={service.title} service={service} index={index} />
             ))}
           </div>
-        </Container>
-      </Section>
-
-      <Section className="pt-0">
-        <Container className="grid gap-16 lg:grid-cols-2 lg:items-center">
-          <img
-            src="/assets/figma/ai-team.png"
-            alt="CoDefine team collaborating in a meeting room"
-            className="w-full rounded-[8px] object-cover"
-          />
-          <div>
-            <SectionHeading
-              align="left"
-              eyebrow="CoDefine AI"
-              title="AI Adoption That Aligns With Your Business"
-              body="CoDefine AI is our dedicated AI center of excellence, helping businesses navigate every stage of the AI-SDLC. From training data and model evaluation to intelligent agents and automation, we move your business beyond experimentation into production-grade AI."
-            />
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild className="rounded-full bg-[#00aaff]">
-                <a href="#contact">Explore CoDefine AI</a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
-              >
-                <a href="#contact">Book an AI Advisory Call</a>
-              </Button>
-            </div>
-          </div>
-        </Container>
-        <Container className="mt-10 grid gap-6 md:grid-cols-3">
-          {[
-            ['AI Data Services', DatabaseIcon],
-            ['Model Evaluation & QA', BrainCircuitIcon],
-            ['AI Automation', BotIcon],
-          ].map(([title, Icon]) => (
-            <DarkCard key={String(title)} className="border-[#00aaff]/25">
-              <CardHeader>
-                <Icon className="size-8 text-[#00d4ff]" />
-                <CardTitle className="text-[24px] text-white">{String(title)}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <BulletList
-                  items={[
-                    'Custom AI workflows',
-                    'Human-in-the-loop QA',
-                    'Production-ready automation',
-                  ]}
-                />
-              </CardContent>
-            </DarkCard>
-          ))}
         </Container>
       </Section>
 
@@ -189,18 +139,13 @@ function StatsStrip({
 }
 
 function LogoStrip() {
-  const items = [
-    company.shortName,
-    company.legalEntityType,
-    company.businessStatus,
-    company.enterpriseCode,
-    company.registeredHeadOffice.city,
-    company.registeredHeadOffice.country,
-  ]
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-4 text-[14px] font-bold text-white/62">
-      {items.map((item) => (
-        <span key={item}>{item}</span>
+    <div className="mt-28 flex flex-wrap items-center gap-x-10 gap-y-6 text-white/70">
+      <span className="text-[16px] text-white/70">Trusted by</span>
+      {clientLogos.map((logo) => (
+        <span key={logo.name} className={cn('text-white/62', logo.className)}>
+          {logo.name}
+        </span>
       ))}
     </div>
   )
